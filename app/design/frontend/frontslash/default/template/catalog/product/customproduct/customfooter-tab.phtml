@@ -1,0 +1,35 @@
+<?php if(Mage::getStoreConfig('customproduct/custom_footer/enable')) : ?>
+<?php
+    $tabOptions = Mage::getStoreConfig('customproduct/custom_footer/custom_option');    
+    $displayBlock = false;
+    $tabArray = array();
+    if ($tabOptions != null || $tabOptions != " ") {
+        $displayBlock = true;
+        $firstTab = true;
+        $tabOptions = explode(",",$tabOptions);        
+        $displayOrder = Mage::getStoreConfig('customproduct/custom_footer/order_options');
+        if ($displayOrder != null && $displayOrder != "") {
+            $displayOrder = explode(",",$displayOrder);
+            foreach ($displayOrder as $order) {
+                foreach ($tabOptions as $tab) {
+                    $tabValue = explode("_",$tab);
+                    if($tabValue[0] == $order) {
+                        $tabArray[] = $tabValue[1];
+                    }
+                }
+            }
+        }
+        else {            
+            foreach ($tabOptions as $tab) {
+                $tabValue = explode("_",$tab);                
+                $tabArray[] = $tabValue[1];          
+            }
+        }
+    }   
+    $activeTab = "_customlistfooter";
+    
+?>
+        
+
+        <?php echo $this->getLayout()->createBlock('customproduct/product'.$activeTab)->setCustomproduct($tabArray)->setBlockLimitId("1c")->setTemplate('catalog/product/customproduct/footerlist.phtml')->toHtml(); ?>
+<?php endif; ?>

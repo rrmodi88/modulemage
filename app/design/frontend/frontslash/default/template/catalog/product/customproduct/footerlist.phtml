@@ -1,0 +1,80 @@
+<?php    
+    
+    $blockId = "";
+    if($this->getCustomBlockId()) {
+	$blockId = "-".$this->getCustomBlockId();
+    }    
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+
+    $_helper = $this->helper('catalog/output');    
+    $display_productname_singleline = Mage::getStoreConfig('frontslash_settings/product_list/display_productname_singleline');
+    $image_aspect_ratio = Mage::getStoreConfig('frontslash_settings/product_list/image_aspect_ratio');
+    $product_style = Mage::getStoreConfig('frontslash_settings/product_list/product_style');
+    if($_GET['layout']) {
+	$page = $_GET['layout'];
+    }
+    else {
+	$page = Mage::app()->getLayout()->getBlock('root')->getTemplate();
+	if ($page == "page/1column.phtml") {
+	    $page = 1;
+	}
+	elseif ($page == "page/2columns-left.phtml" || $page == "page/2columns-right.phtml") {
+	    $page = 2;
+	}	
+	elseif($page == "page/3columns.phtml") {
+	    $page = 3;		
+	}
+	else {
+	    $page = 0;
+	}
+    }
+?>
+<?php if($_productCollection->count()): ?>
+<?php $_collectionSize = $_productCollection->count() ?>    
+	<div id="custom-product<?php echo $blockId; ?>" class="products-grid itemslider <?php echo 'product-style'.$product_style; ?>">
+	<?php foreach ($_productCollection as $_product): ?>
+	    
+	    <div class="item">
+		
+		<div class="product-image-wrapper">
+			
+		    
+                    
+		    <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+			<?php if($image_aspect_ratio == '1'){ ?>
+			    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->constrainOnly(true)->keepAspectRatio(true)->keepFrame(false)->resize(30,0) ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+			<?php } else { ?>
+			    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->constrainOnly(true)->resize(30,30) ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+			<?php } ?>
+		    </a>
+		    
+		    <div id='ajax_loader<?php echo $_product->getId()?>' class="double-bounce" style="display: none;">
+			    <div class="double-bounce1"></div>
+			    <div class="double-bounce2"></div>
+		    </div>
+		    <div class="actions">
+			<div class="actions-details">
+		
+		<div class="product-content-wrapper">
+		    <div class="product-content">
+			
+			<h3 class="product-name<?php if($display_productname_singleline == '1'){ ?> single-line-name<?php } ?>"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->htmlEscape($_product->getName()); ?></a></h3>
+			asdasdasd
+			<div class="vert">
+			    <?php echo $this->getPriceHtml($_product, true) ?>			    
+			</div>
+		    </div>
+		</div>
+		
+            </div>						    
+	   
+	<?php endforeach ?>
+	</div>
+    <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+    
+   
+	
+   
+<?php endif; ?>
