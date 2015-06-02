@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>magento_easy_flags</name>
+ <channel>connect.magentocommerce.com/community</channel>
+ <summary>Magento Easy Flags Community Module</summary>
+ <description>This small extension will help anybody to convert default magento store view switcher into nice flag buttons. Installation and configuration will take approximately 5 minutes.</description>
+ <lead>
+  <name>TemplatesMaster</name>
+  <user>TemplatesMaster</user>
+  <email>support@templates-master.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-06-23</date>
+ <time>07:24:55</time>
+ <version>
+  <release>0.5</release>
+  <api>0.5</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://creativecommons.org/licenses/by/3.0/">Creative Commons License </license>
+ <notes>Magento Easy Flags Community Module</notes>
+ <contents>
+  <dir name="/">
+   <dir name="frontend">
+    <dir name="default">
+     <dir name="default">
+      <dir name="css">
+       <file md5sum="c351cd680b199d4154b01c16148425fb" name="easyflags.css" role="mageskin" />
+      </dir> <!-- /frontend/default/default/css -->
+      <dir name="images">
+       <dir name="flags">
+        <file md5sum="6d1aa633a8097b961bda2f5f735f35a7" name="ad.gif" role="mageskin" />
+        <file md5sum="f212f62ad8f9209e58345eaffae81115" name="ae.gif" role="mageskin" />
+        <file md5sum="7110571f5f22f1942ee97afa41f51e61" name="af.gif" role="mageskin" />
+        <file md5sum="49068e672834658b179cd86a35325e47" name="ag.gif" role="mageskin" />
+        <file md5sum="5ff25d17bfde13c3a09961d87b04c1ba" name="ai.gif" role="mageskin" />
+        <file md5sum="02c223e7f2c1d4f98553d6167b723cb2" name="al.gif" role="mageskin" />
+        <file md5sum="33b02876d7e0dadfa94db32443dda36e" name="am.gif" role="mageskin" />
+        <file md5sum="caf5f4429cf5a5d91a457385460d9c38" name="an.gif" role="mageskin" />
+        <file md5sum="4b962702108c12ea1c6375e2d6667191" name="ao.gif" role="mageskin" />
+        <file md5sum="9c95874961754b638a20b39ce7696f31" name="ar.gif" role="mageskin" />
+        <file md5sum="b58f58ac2f16e7d81f1480875a8e33c0" name="as.gif" role="mageskin" />
+        <file md5sum="eeb91d7617243cadbe646b6d795c678f" name="at.gif" role="mageskin" />
+        <file md5sum="1fe85ab1104e05f5a26efa5bbcd1cf18" name="au.gif" role="mageskin" />
+        <file md5sum="65ed67b97141c58ea652416ab83f2676" name="aw.gif" role="mageskin" />
+        <file md5sum="6ca1b9ad68066fa5dd253e05acf85496" name="ax.gif" role="mageskin" />
+        <file md5sum="b1646ac4434f234d8d5034606a7af947" name="az.gif" role="mageskin" />
+        <file md5sum="53dfab82eedc9f915dd7413b1acdd8cb" name="ba.gif" role="mageskin" />
+        <file md5sum="a4e2a530aaaa28ecfe7a63f3b6081871" name="bb.gif" role="mageskin" />
+        <file md5sum="12e3055f52cf6a1551d4146b2ef8bf34" name="bd.gif" role="mageskin" />
+        <file md5sum="595a78d8e7caadfee854dd2f15e22093" name="be.gif" role="mageskin" />
+        <file md5sum="207fcec4143ee2d33d81bf24fd2e93fb" name="bf.gif" role="mageskin" />
+        <file md5sum="5be202b067ced9053affd880754fcf63" name="bg.gif" role="mageskin" />
+        <file md5sum="5411780a3d43531aae0b66eec250467c" name="bh.gif" role="mageskin" />
+        <file md5sum="2c7cf6b75c5fe88be53237ce6b9ba709" name="bi.gif" role="mageskin" />
+        <file md5sum="da5abd9ecc82282cd8dfa8507d72b19d" name="bj.gif" role="mageskin" />
+        <file md5sum="fba77982d567bc1892c2b64d6ef47a81" name="bm.gif" role="mageskin" />
+        <file md5sum="87b3432e4df98e0b73673ac910f01010" name="bn.gif" role="mageskin" />
+        <file md5sum="0b8ef2f7302d078461e47676119c08ab" name="bo.gif" role="mageskin" />
+        <file md5sum="92858b17e2d5b63d040104586ff52302" name="br.gif" role="mageskin" />
+        <file md5sum="72ba741ab39307b5639ef2ba4bd96fe7" name="bs.gif" role="mageskin" />
+        <file md5sum="36d740145ed89f4a02fc483baed1323a" name="bt.gif" role="mageskin" />
+        <file md5sum="bbc9011e876a122ea89923e6b730ec50" name="bv.gif" role="mageskin" />
+        <file md5sum="d841ce1d195d470bdddb1c478039c050" name="bw.gif" role="mageskin" />
+        <file md5sum="f90504a0c446c69ebf3031a0c6f7ea81" name="by.gif" role="mageskin" />
+        <file md5sum="035793a3b9079e171ee8f5f81bda9cc7" name="bz.gif" role="mageskin" />
+        <file md5sum="71ad31efd4e749a2e23b706c15db73ae" name="ca.gif" role="mageskin" />
+        <file md5sum="40cb2cf41ee9f17325e9d03ecbfdf4c5" name="catalonia.gif" role="mageskin" />
+        <file md5sum="94a9202e2d3618f0d788e5f2d54323c6" name="cc.gif" role="mageskin" />
+        <file md5sum="7cf2d745b0007b2b026bc8c060d69a6f" name="cd.gif" role="mageskin" />
+        <file md5sum="e885f0438ba36f1f4787bb603f99c8f3" name="cf.gif" role="mageskin" />
+        <file md5sum="6ff3d64b899ee3c52af74134dd405424" name="cg.gif" role="mageskin" />
+        <file md5sum="ed43f66bc567ac6954adf9e949aede86" name="ch.gif" role="mageskin" />
+        <file md5sum="8ed1d6c276ae7964928ae032c2b9aca1" name="ci.gif" role="mageskin" />
+        <file md5sum="af275b38413317a7b23bdf799dd567c7" name="ck.gif" role="mageskin" />
+        <file md5sum="78d55180619241a9df9cccf6e3d9f6f3" name="cl.gif" role="mageskin" />
+        <file md5sum="8a1d0e21ed2ec1be609574a473493031" name="cm.gif" role="mageskin" />
+        <file md5sum="b04190e287f32d56867cd6ac53fdedcb" name="cn.gif" role="mageskin" />
+        <file md5sum="405dfe11225ebe1cc34b30ccd765753e" name="co.gif" role="mageskin" />
+        <file md5sum="bd762e1a0567e38bcaea1e9b3956b6c1" name="cr.gif" role="mageskin" />
+        <file md5sum="be7111c8a514d660850c92d217b7860e" name="cs.gif" role="mageskin" />
+        <file md5sum="03d19d686d0e21a037cbcbca332ecec0" name="cu.gif" role="mageskin" />
+        <file md5sum="a6bfe2d82321df4314f181154080b78c" name="cv.gif" role="mageskin" />
+        <file md5sum="ac0b5e80669c0e7f7fcf6d577d7d5df4" name="cx.gif" role="mageskin" />
+        <file md5sum="649f116f7c7c2f0524d6428eaa17ad6c" name="cy.gif" role="mageskin" />
+        <file md5sum="6352cbfac37d53fd10f6948e8b9a4ac8" name="cz.gif" role="mageskin" />
+        <file md5sum="b0dbdccf1c4e4a267a5cd2bf7ea4cb69" name="de.gif" role="mageskin" />
+        <file md5sum="30bd321e11df6356b73eaa21fb183eae" name="dj.gif" role="mageskin" />
+        <file md5sum="d7c2fddc4b0a9c6ca3d5e2ed13374421" name="dk.gif" role="mageskin" />
+        <file md5sum="efcf65d93c1713cc052dec2e0883b877" name="dm.gif" role="mageskin" />
+        <file md5sum="9389aa6eb9859b2a7b00843482847356" name="do.gif" role="mageskin" />
+        <file md5sum="e8da7d880886bf815ad641b7cd0b7f9c" name="dz.gif" role="mageskin" />
+        <file md5sum="4b82d78f2a20846b268f28caac6a4ab4" name="ec.gif" role="mageskin" />
+        <file md5sum="7c9d14f7681e967ea10d4fa2a8f0ecde" name="ee.gif" role="mageskin" />
+        <file md5sum="99dd064303f1d69989789038e8d60020" name="eg.gif" role="mageskin" />
+        <file md5sum="043ce3f2f09f6ee41984a83757365e1a" name="eh.gif" role="mageskin" />
+        <file md5sum="331d7734597f1b86e1dba8b569707be8" name="england.gif" role="mageskin" />
+        <file md5sum="509ed59423d395c2c73f2e4f815dbaeb" name="er.gif" role="mageskin" />
+        <file md5sum="c0ddb5b02a4d2c4d274140a6cffc4be0" name="es.gif" role="mageskin" />
+        <file md5sum="b738a5aca0b4b4c05a6c745380fcf222" name="et.gif" role="mageskin" />
+        <file md5sum="743b967a43b96fd8bb0e8b194081979c" name="europeanunion.gif" role="mageskin" />
+        <file md5sum="190106f196e51bf0c41a6961c189610b" name="fam.gif" role="mageskin" />
+        <file md5sum="94e7d08c3043f3dc65b4eff40223d4e8" name="fi.gif" role="mageskin" />
+        <file md5sum="3a839ddc795a643dad5c6cfa83f9721f" name="fj.gif" role="mageskin" />
+        <file md5sum="21884f77423cbf8eb4b86f61399345b0" name="fk.gif" role="mageskin" />
+        <file md5sum="013d4b6246bd2158f9d9bc685be72840" name="fm.gif" role="mageskin" />
+        <file md5sum="f2946a58a93f63303c47d649617e03be" name="fo.gif" role="mageskin" />
+        <file md5sum="0a4673b07b377d1f58230f40f256d890" name="fr.gif" role="mageskin" />
+        <file md5sum="6023ba4847dd1329d210f687c63458d5" name="ga.gif" role="mageskin" />
+        <file md5sum="b68a866f3b54a11cf2fc2b3ce2ea26d5" name="gb.gif" role="mageskin" />
+        <file md5sum="282a476bceb7bdbfc19a47d68a0efc18" name="gd.gif" role="mageskin" />
+        <file md5sum="a04177e4b34a23dcbf0e8a64838b4619" name="ge.gif" role="mageskin" />
+        <file md5sum="0a4673b07b377d1f58230f40f256d890" name="gf.gif" role="mageskin" />
+        <file md5sum="e72c4c18615e958e05dcc12364fe6527" name="gh.gif" role="mageskin" />
+        <file md5sum="2ca6d3fcbabb4b5dc430c8a552d7fb1b" name="gi.gif" role="mageskin" />
+        <file md5sum="edcdeb38a22b784f2c19f76f2af37d39" name="gl.gif" role="mageskin" />
+        <file md5sum="bcfe045327c84129e7d8118d9a7a5524" name="gm.gif" role="mageskin" />
+        <file md5sum="918580fdb7cd4df14d4805b9ac95f82c" name="gn.gif" role="mageskin" />
+        <file md5sum="15cf1ed243475f743fbd95813985724b" name="gp.gif" role="mageskin" />
+        <file md5sum="d7bef30dfa3e2ee2b6b1ea84eab0d047" name="gq.gif" role="mageskin" />
+        <file md5sum="d26600ec24ea1cd62a3042d1d68f2ac4" name="gr.gif" role="mageskin" />
+        <file md5sum="e3c0ab08adb27ea01a370f63926f232e" name="gs.gif" role="mageskin" />
+        <file md5sum="65511daa32c81a3eb2fb925e15101687" name="gt.gif" role="mageskin" />
+        <file md5sum="0bde69cee1c5862dcb000c6848d84273" name="gu.gif" role="mageskin" />
+        <file md5sum="162a7157154d909cd81bdc6632ecbc63" name="gw.gif" role="mageskin" />
+        <file md5sum="71a4f19942ccd37df09fa813943e5fee" name="gy.gif" role="mageskin" />
+        <file md5sum="692eea40bf0b08bac50f9785a843cb5f" name="hk.gif" role="mageskin" />
+        <file md5sum="1fe85ab1104e05f5a26efa5bbcd1cf18" name="hm.gif" role="mageskin" />
+        <file md5sum="c0e00f96daf73bd2bea3ad87c63aede2" name="hn.gif" role="mageskin" />
+        <file md5sum="825a4f07cfe3bf652e1e9ec72ee26f14" name="hr.gif" role="mageskin" />
+        <file md5sum="92a6d557d1adf362160e3bd0d774ecb7" name="ht.gif" role="mageskin" />
+        <file md5sum="d543f5932e461ef6b04c070a63ccd151" name="hu.gif" role="mageskin" />
+        <file md5sum="6f27ba21a22aa1486b568aa200d6c73c" name="id.gif" role="mageskin" />
+        <file md5sum="74924874aa60e9fda9d94dcb892e322a" name="ie.gif" role="mageskin" />
+        <file md5sum="44d2cc7e87c0f39eda33a43234d75afd" name="il.gif" role="mageskin" />
+        <file md5sum="46e1776549c9bb866ae7b18f9d847b0a" name="in.gif" role="mageskin" />
+        <file md5sum="f6c43cf9bc8365d50b65019f9fc543d7" name="io.gif" role="mageskin" />
+        <file md5sum="a4bd28a6c543211dacb5ce3e18e96846" name="iq.gif" role="mageskin" />
+        <file md5sum="6456dc4dd3745e2c84c13702eeb87844" name="ir.gif" role="mageskin" />
+        <file md5sum="347f6ff824ac5e7a31fc549811c9aac7" name="is.gif" role="mageskin" />
+        <file md5sum="7b2fba7a5df93ea5980e1d46409642b2" name="it.gif" role="mageskin" />
+        <file md5sum="98ea05ee62c0d4462f902b108b046439" name="jm.gif" role="mageskin" />
+        <file md5sum="ac7a3e1aace29eb636ed41332b4c68ae" name="jo.gif" role="mageskin" />
+        <file md5sum="b6fa87814a6e40fcdf41d79c5e06c406" name="jp.gif" role="mageskin" />
+        <file md5sum="6592c34b8a16505388c21e99508e580b" name="ke.gif" role="mageskin" />
+        <file md5sum="385d842f1918453025966751d5b551bf" name="kg.gif" role="mageskin" />
+        <file md5sum="2a0042042f0d6feea0c435f9833b1bd4" name="kh.gif" role="mageskin" />
+        <file md5sum="b01814ad07dee8bc4be5d3038cc8b6b5" name="ki.gif" role="mageskin" />
+        <file md5sum="258ef6e0c4f69ba726277a93a51dac56" name="km.gif" role="mageskin" />
+        <file md5sum="f23fe3a61ad0d78bb69c25711eeb249f" name="kn.gif" role="mageskin" />
+        <file md5sum="f45a650bf92b6ad6552bf618d2ffe75d" name="kp.gif" role="mageskin" />
+        <file md5sum="53ca55d29130501b6cd57b98f169701f" name="kr.gif" role="mageskin" />
+        <file md5sum="48d87006385685ae24764c0d9b595d9b" name="kw.gif" role="mageskin" />
+        <file md5sum="4d159d20cf64b712700756d32cde64ee" name="ky.gif" role="mageskin" />
+        <file md5sum="9faa30e94f43918d74d09b3eaaec6933" name="kz.gif" role="mageskin" />
+        <file md5sum="334d5527bcd7e6901a6b729e632683df" name="la.gif" role="mageskin" />
+        <file md5sum="2c3675c6a47325a4d2445e50afc929ae" name="lb.gif" role="mageskin" />
+        <file md5sum="b59f163f78321acb812595961d2ab111" name="lc.gif" role="mageskin" />
+        <file md5sum="239e66bf39e8052587b504515a21f03b" name="li.gif" role="mageskin" />
+        <file md5sum="8f906d20bf8ab9749e19958ad60e1584" name="lk.gif" role="mageskin" />
+        <file md5sum="21cd61ee215e4b0147ab4320822cf2fc" name="lr.gif" role="mageskin" />
+        <file md5sum="68af1c3f00b31ef072c99d95fa453ff6" name="ls.gif" role="mageskin" />
+        <file md5sum="017aa4fbed00bfd848fb021462c296e2" name="lt.gif" role="mageskin" />
+        <file md5sum="230678f649c90589bf40024bd9ffa294" name="lu.gif" role="mageskin" />
+        <file md5sum="2eb690f1af034a71573641bfcfcf603e" name="lv.gif" role="mageskin" />
+        <file md5sum="72a42cca81f2e81dc65d9dd6f772cd56" name="ly.gif" role="mageskin" />
+        <file md5sum="ad81d516864533d1869ed296603f6e7e" name="ma.gif" role="mageskin" />
+        <file md5sum="3322300de4324fde3ee51d3d4431dc00" name="mc.gif" role="mageskin" />
+        <file md5sum="7a363edf7896c044c1031a4c2f78110a" name="md.gif" role="mageskin" />
+        <file md5sum="887b486043d315be7eb4be815e38ef58" name="me.gif" role="mageskin" />
+        <file md5sum="8adc0f5fe9c73b87cd50d4fb49485ccc" name="mg.gif" role="mageskin" />
+        <file md5sum="cdfdd26cff13006fd5a7f3bcf433cba0" name="mh.gif" role="mageskin" />
+        <file md5sum="b8eaaa78b588dc5a78a213b665c3f41d" name="mk.gif" role="mageskin" />
+        <file md5sum="14bad568cfb82dde31f1d59eafe5f633" name="ml.gif" role="mageskin" />
+        <file md5sum="f0d6434e55addac1e1e0e9b43274c14a" name="mm.gif" role="mageskin" />
+        <file md5sum="df21fe047bf3840629594af786c510c5" name="mn.gif" role="mageskin" />
+        <file md5sum="04bb90bdf2614d372dec56449e912596" name="mo.gif" role="mageskin" />
+        <file md5sum="cac8345e9b3e072169bb833244ab68fd" name="mp.gif" role="mageskin" />
+        <file md5sum="aa80ab7a73d808d7b3570868cdc3d1fb" name="mq.gif" role="mageskin" />
+        <file md5sum="08c96ea87ff559d6dc6b4605fcbcfe40" name="mr.gif" role="mageskin" />
+        <file md5sum="d6a0a5e4472ffd96e7d4c7c8d91ed2b2" name="ms.gif" role="mageskin" />
+        <file md5sum="dc7a0aeb0f7280435a328cadce598b8f" name="mt.gif" role="mageskin" />
+        <file md5sum="9869ea31cbf8d3f2d1f42824122b61dd" name="mu.gif" role="mageskin" />
+        <file md5sum="9827918f9646eaa08854d45bef7ea093" name="mv.gif" role="mageskin" />
+        <file md5sum="12b2a62fae9c618544a56fef3d687306" name="mw.gif" role="mageskin" />
+        <file md5sum="7211e357363beb1da21ce32593b4f5a8" name="mx.gif" role="mageskin" />
+        <file md5sum="51479ef74dfd0b2006983b6b9bff3d91" name="my.gif" role="mageskin" />
+        <file md5sum="4b938aa9c776ea29cf0b51fb48f1767a" name="mz.gif" role="mageskin" />
+        <file md5sum="a417cfe920429e7af07a98ea51aa22a5" name="na.gif" role="mageskin" />
+        <file md5sum="2135f0fb410b2f0767a7b534c753b848" name="nc.gif" role="mageskin" />
+        <file md5sum="489f6052b3d124a6607d4cb6a00022e1" name="ne.gif" role="mageskin" />
+        <file md5sum="9f851132acffa1724a697ada9c539ff8" name="nf.gif" role="mageskin" />
+        <file md5sum="5ddf086d424340d2cd9a18e0f9c20ff9" name="ng.gif" role="mageskin" />
+        <file md5sum="bb8200af164d5a73758fa5822fbace10" name="ni.gif" role="mageskin" />
+        <file md5sum="82994b14a5992b5a3539b9c0a789297c" name="nl.gif" role="mageskin" />
+        <file md5sum="bbc9011e876a122ea89923e6b730ec50" name="no.gif" role="mageskin" />
+        <file md5sum="07dcfcc7ade4117c8f5d908101c22328" name="np.gif" role="mageskin" />
+        <file md5sum="2a73be7cc4c7ae728e53748f07ce5b07" name="nr.gif" role="mageskin" />
+        <file md5sum="d7ad59b643ac9e8ecfe2193d37d08dc4" name="nu.gif" role="mageskin" />
+        <file md5sum="5809a037a53791f4632ed2756adf966c" name="nz.gif" role="mageskin" />
+        <file md5sum="72045d2de14bc2f0b04b3cddb3c93892" name="om.gif" role="mageskin" />
+        <file md5sum="192c84595d7ffb76229892030e08e37f" name="pa.gif" role="mageskin" />
+        <file md5sum="983af8b4835a96641f85449f2779a831" name="pe.gif" role="mageskin" />
+        <file md5sum="53c0188190e727bd3ea04778b4e83a9d" name="pf.gif" role="mageskin" />
+        <file md5sum="c0e201f4833b5bb6fe8ac014162ad8d9" name="pg.gif" role="mageskin" />
+        <file md5sum="0630367a44279677e4bff7f09dc820e8" name="ph.gif" role="mageskin" />
+        <file md5sum="fe878d940e0e3030c7258feca05b2ebf" name="pk.gif" role="mageskin" />
+        <file md5sum="279fd88ddc4abbd4d808a087b653ea24" name="pl.gif" role="mageskin" />
+        <file md5sum="c74a19a09019278029760d4381e7fa8a" name="pm.gif" role="mageskin" />
+        <file md5sum="997fbcf797457e2658d8f6df066cef78" name="pn.gif" role="mageskin" />
+        <file md5sum="a48b81abee4dfc5f36947006b603747a" name="pr.gif" role="mageskin" />
+        <file md5sum="bf9849158592502d0e12ce36401d1925" name="ps.gif" role="mageskin" />
+        <file md5sum="b68938af019e2c74377327abbe3d4b5e" name="pt.gif" role="mageskin" />
+        <file md5sum="a19c54b3a802fa6ba217099df5c4659b" name="pw.gif" role="mageskin" />
+        <file md5sum="bef5b19a0555c6b85fa8f46055e019c7" name="py.gif" role="mageskin" />
+        <file md5sum="8de77aa8a0a825346fac6d29837c2449" name="qa.gif" role="mageskin" />
+        <file md5sum="0a4673b07b377d1f58230f40f256d890" name="re.gif" role="mageskin" />
+        <file md5sum="8569e94e81a39bbb43ed8445d1a92dd5" name="ro.gif" role="mageskin" />
+        <file md5sum="b193b9db485d06fda3656c5f174cb953" name="rs.gif" role="mageskin" />
+        <file md5sum="addac471b8ddc26a9f1f2fa235330d80" name="ru.gif" role="mageskin" />
+        <file md5sum="26c4bdfd43b5d836acd1dfdeaffa4cf4" name="rw.gif" role="mageskin" />
+        <file md5sum="94c55d70da8c458459597aa1d9b60112" name="sa.gif" role="mageskin" />
+        <file md5sum="76cf18354aa71695e488923f516fc23c" name="sb.gif" role="mageskin" />
+        <file md5sum="65c089b927687a801afd75528f1b6def" name="sc.gif" role="mageskin" />
+        <file md5sum="ffd4426704720dc580138a55a86e5d9c" name="scotland.gif" role="mageskin" />
+        <file md5sum="983179ead3080585811d73e729e678a1" name="sd.gif" role="mageskin" />
+        <file md5sum="cf357235e945172661d7ee5fde26f909" name="se.gif" role="mageskin" />
+        <file md5sum="2a46e9e31359baaeb4e6ab4b0b950961" name="sg.gif" role="mageskin" />
+        <file md5sum="041dff1f55c07bcda4f53a75be64af18" name="sh.gif" role="mageskin" />
+        <file md5sum="b796cc14ec4516ae9098e57a7c391dab" name="si.gif" role="mageskin" />
+        <file md5sum="bbc9011e876a122ea89923e6b730ec50" name="sj.gif" role="mageskin" />
+        <file md5sum="ffac49f21971212d048422d36a555d50" name="sk.gif" role="mageskin" />
+        <file md5sum="dfea6e55c87213abcca8e95ecca700dd" name="sl.gif" role="mageskin" />
+        <file md5sum="59f434ebf3668c85d1fbbffa751fff6e" name="sm.gif" role="mageskin" />
+        <file md5sum="379caf2d23ed870f9e0239ba93ee7551" name="sn.gif" role="mageskin" />
+        <file md5sum="e1d51439b1153ae38776553a7bcf10d0" name="so.gif" role="mageskin" />
+        <file md5sum="4e5415a5e3fbf7496007249478c12276" name="sr.gif" role="mageskin" />
+        <file md5sum="6596dc6cdeed9b4979fbb5c7609e66f5" name="st.gif" role="mageskin" />
+        <file md5sum="e3479c1d5ac76b8b7dcfb709cfd0083e" name="sv.gif" role="mageskin" />
+        <file md5sum="d86f69a9267f00e11030246c36109bc5" name="sy.gif" role="mageskin" />
+        <file md5sum="5d7b57a0a5883abcc3fe28c1d4b2df1d" name="sz.gif" role="mageskin" />
+        <file md5sum="0e5370c94999fb37c1a730337f431f50" name="tc.gif" role="mageskin" />
+        <file md5sum="2782b3d0b1ab6eaa48d091fc938b97c6" name="td.gif" role="mageskin" />
+        <file md5sum="9e1af29a601960b84f90fb2efacb9bd2" name="tf.gif" role="mageskin" />
+        <file md5sum="ece0a5d9d0ffa8662f66a37c667e9538" name="tg.gif" role="mageskin" />
+        <file md5sum="a4be77cc567463a6ab33df47a6471f90" name="th.gif" role="mageskin" />
+        <file md5sum="9b1b0ecd454b7ccad12431a2a0281914" name="tj.gif" role="mageskin" />
+        <file md5sum="c895d3c66ec3cf659b59d854ce1e0e9a" name="tk.gif" role="mageskin" />
+        <file md5sum="9e79c92f60fb33cbb83addf04c64c789" name="tl.gif" role="mageskin" />
+        <file md5sum="8453e36426a3acba26bac199c92fb095" name="tm.gif" role="mageskin" />
+        <file md5sum="30245ac4122c61accb380e162691f431" name="tn.gif" role="mageskin" />
+        <file md5sum="ecacff3913a318a8556ed4dd7a6582a7" name="to.gif" role="mageskin" />
+        <file md5sum="3c7e51066bea641449722616fdce2d21" name="tr.gif" role="mageskin" />
+        <file md5sum="5715707d79f5a81c9686c593f65f2e80" name="tt.gif" role="mageskin" />
+        <file md5sum="4a0b50aa81de8101f281a3d6dfbc4aa1" name="tv.gif" role="mageskin" />
+        <file md5sum="c6da9ab7f3bfe2fd202e993b99aa9158" name="tw.gif" role="mageskin" />
+        <file md5sum="6af3860230e7cc1b12049731a95f4e4d" name="tz.gif" role="mageskin" />
+        <file md5sum="acc1cf561309691198e59e23c9840d13" name="ua.gif" role="mageskin" />
+        <file md5sum="e29af593a8eacb68e81755c78a7dbf19" name="ug.gif" role="mageskin" />
+        <file md5sum="8346f478516f733a68c500410fd57159" name="um.gif" role="mageskin" />
+        <file md5sum="4a0cdce756ed771a5d9a16114179d5e7" name="us.gif" role="mageskin" />
+        <file md5sum="74786429627d504ad3d36b0c4a40a638" name="uy.gif" role="mageskin" />
+        <file md5sum="2eefb9f89353a9554188dc522d07c68b" name="uz.gif" role="mageskin" />
+        <file md5sum="6f64ebd984e71e113042dfb5b5dfbd73" name="va.gif" role="mageskin" />
+        <file md5sum="cf4329d0f1da7924b3eec1a0f725ce45" name="vc.gif" role="mageskin" />
+        <file md5sum="e067f0c4fbaa5ed99477581e86630faa" name="ve.gif" role="mageskin" />
+        <file md5sum="8510bbd7fc9843b558424ac411992732" name="vg.gif" role="mageskin" />
+        <file md5sum="6ab52e66bdf59c0826bb205307eec76a" name="vi.gif" role="mageskin" />
+        <file md5sum="66364a250886c943e1f40fb0762c0a63" name="vn.gif" role="mageskin" />
+        <file md5sum="269340d3432e0bf04aa2d20b1916d723" name="vu.gif" role="mageskin" />
+        <file md5sum="74027bf2c92ffb8d744e09a72467bf36" name="wales.gif" role="mageskin" />
+        <file md5sum="321ff7ca69712a9af5405291f972dd0a" name="wf.gif" role="mageskin" />
+        <file md5sum="32ac83d94d72fc5abb59dc917a07fc72" name="ws.gif" role="mageskin" />
+        <file md5sum="743f4826f90f1ccdf9400d100da04ae7" name="ye.gif" role="mageskin" />
+        <file md5sum="b8c20446453d8057fcc73db427ab9f9d" name="yt.gif" role="mageskin" />
+        <file md5sum="c8d80912d6a8a8fc94cb856871a864cb" name="za.gif" role="mageskin" />
+        <file md5sum="88d75c077c65a544c5676bc35eb3f6f4" name="zm.gif" role="mageskin" />
+        <file md5sum="fd5cc25e0cea7e07b0be89c5452c546c" name="zw.gif" role="mageskin" />
+       </dir> <!-- /frontend/default/default/images/flags -->
+      </dir> <!-- /frontend/default/default/images -->
+      <dir name="layout">
+       <file md5sum="9fddeda0b0252e7c557dd41de63cf5f1" name="easyflags.xml" role="magedesign" />
+      </dir> <!-- /frontend/default/default/layout -->
+      <dir name="template">
+       <dir name="easyflags">
+        <file md5sum="c08b80d315096fc5221d7f341a6379f2" name="flags.phtml" role="magedesign" />
+       </dir> <!-- /frontend/default/default/template/easyflags -->
+      </dir> <!-- /frontend/default/default/template -->
+     </dir> <!-- /frontend/default/default -->
+    </dir> <!-- /frontend/default -->
+   </dir> <!-- /frontend -->
+   <dir name="modules">
+    <file md5sum="21d8d51210da2680d4bdc88aed267d9f" name="TM_EasyFlags.xml" role="mageetc" />
+   </dir> <!-- /modules -->
+   <dir name="TM">
+    <dir name="EasyFlags\etc">
+     <file md5sum="858d0764c526551b6d3aae227e6b026e" name="config.xml" role="magecommunity" />
+     <file md5sum="0c5dd134cb5129de012b7f3276b4a121" name="system.xml" role="magecommunity" />
+    </dir> <!-- /TM/EasyFlags\etc -->
+    <dir name="EasyFlags\Helper">
+     <file md5sum="290ea74ffdc506723d0fc7c97364885d" name="Data.php" role="magecommunity" />
+    </dir> <!-- /TM/EasyFlags\Helper -->
+    <dir name="EasyFlags\sql\easyflags_setup">
+     <file md5sum="a02b06e4baec452ca25a7b2141c5e6a6" name="mysql4-install-1.0.0.php" role="magecommunity" />
+    </dir> <!-- /TM/EasyFlags\sql\easyflags_setup -->
+   </dir> <!-- /TM -->
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+    <max>6.0</max>
+   </php>
+   <pearinstaller>
+    <min>1.6.2</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+</package>

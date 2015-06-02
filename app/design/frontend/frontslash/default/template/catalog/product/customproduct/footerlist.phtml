@@ -7,7 +7,6 @@
 ?>
 <?php
     $_productCollection=$this->getLoadedProductCollection();
-
     $_helper = $this->helper('catalog/output');    
     $display_productname_singleline = Mage::getStoreConfig('frontslash_settings/product_list/display_productname_singleline');
     $image_aspect_ratio = Mage::getStoreConfig('frontslash_settings/product_list/image_aspect_ratio');
@@ -33,7 +32,7 @@
 ?>
 <?php if($_productCollection->count()): ?>
 <?php $_collectionSize = $_productCollection->count() ?>    
-	<div id="custom-product<?php echo $blockId; ?>" class="products-grid itemslider <?php echo 'product-style'.$product_style; ?>">
+	<div id="custom-product<?php echo $blockId; ?>" class="	<?php echo 'product-style'.$product_style; ?>">
 	<?php foreach ($_productCollection as $_product): ?>
 	    
 	    <div class="item">

@@ -71,9 +71,9 @@ class Frontslash_CustomProduct_Block_Product_Customlistfooter extends Mage_Catal
                 
                 $numProducts = Mage::helper('customproduct')->productFooterMaxLimit($this->getBlockLimitId());
                 $collection->setPage(1, $numProducts)->load();
-
+                $collectionData[$attrValue] = $collection->getData();
             }
-            $this->_productCollection = $collection;
+
         }        
         return $this->_productCollection;
     }
