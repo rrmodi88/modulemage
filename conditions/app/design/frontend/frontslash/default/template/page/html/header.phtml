@@ -1,0 +1,182 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php if(Mage::getStoreConfig('frontslash_settings/header/header_style') == '1') { ?>
+<div class="header-container header1">    
+    <div class="header-top-container">
+        <div class="header-top header container_12">
+            <div class="grid_full">
+                <div class="item-left">
+                    <?php echo $this->getChildHtml('store_language'); ?>            
+                </div>
+                <div class="item-left">
+                    <?php echo $this->getLayout()->createBlock('directory/currency')->setTemplate('directory/currency.phtml')->toHtml(); ?>                                        
+                </div>
+                <div class="item-right">
+                    <div class="top-links hide-below-768">
+                        <?php echo $this->getChildHtml('topLinks'); ?>
+                    </div>
+                    <div class="search-mobile">
+                        <?php echo $this->getChildHtml('topSearch'); ?>
+                    </div>
+                </div>            
+            </div>
+        </div>
+        <div class="top-links links-mobile">
+            <?php echo $this->getChildHtml('topLinks'); ?>
+        </div>        
+    </div>
+    <div class="header-primary-container">
+        <div class="header-primary header container_12">
+            <div class="grid_full">
+                <div class="header-main v-grid-container">
+                    <div class="grid_6 mobile-grid-half v-grid no-left-margin">
+                        <div class="logo">
+                            <a href='<?php echo $this->getUrl(''); ?>' title='<?php echo $this->getLogoAlt(); ?>'>
+                                <strong><?php echo $this->getLogoAlt(); ?></strong>
+                                <img src='<?php echo $this->getLogoSrc(); ?>' alt='<?php echo $this->getLogoAlt(); ?>' />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid_6 mobile-grid-half v-grid no-right-margin hide-below-480">
+                        <?php echo $this->getChildHtml('cart_sidebar') ?>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navmain-container<?php if(Mage::getStoreConfig('frontslash_settings/menu/menuwidth')) { ?> templete<?php } ?>">
+        <div class="container_12">
+            <div class="grid_full">
+                <div class="nav">
+                    <div class="mobile-grid-half no-left-margin f-left">
+                        <?php echo $this->getChildHtml('topContainer'); ?>
+                        <?php echo $this->getChildHtml('topMenu') ?>
+                    </div>
+                    <div class="mobile-grid-half no-right-margin f-right">
+                        <div class="quick-search hide-below-768">
+                            <?php echo $this->getChildHtml('topSearch'); ?>
+                        </div>
+                        <div class="cart_mobile">
+                            <?php echo $this->getChildHtml('cart_sidebar') ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php if(Mage::getStoreConfig('frontslash_settings/header/sticky_header') && Mage::helper("ThemeConfig")->Mobile() == false) { ?>
+<script type="text/javascript">
+// header fixed
+var myHeader = j$('.navmain-container');
+myHeader.data( 'position', myHeader.position() );
+j$(window).scroll(function(){
+    var hPos = myHeader.data('position'), scroll = getScroll();
+    if ( hPos.top < scroll.top ){
+        myHeader.addClass('fixed');
+    }
+    else {
+        myHeader.removeClass('fixed');
+    }
+});
+
+function getScroll () {
+    var b = document.body;
+    var e = document.documentElement;
+    return {
+        left: parseFloat( window.pageXOffset || b.scrollLeft || e.scrollLeft ),
+        top: parseFloat( window.pageYOffset || b.scrollTop || e.scrollTop )
+    };
+}
+// end header fixed
+</script>
+<?php } ?>
+<?php } elseif (Mage::getStoreConfig('frontslash_settings/header/header_style') == '2') { ?>
+
+<div class="header-container header2">    
+    <div class="header-top-container">
+        <div class="header-top header container_12">
+            <div class="grid_full">
+                <div class="item-left">
+                    <?php echo $this->getChildHtml('store_language'); ?>            
+                </div>
+                <div class="item-left">
+                    <?php echo $this->getLayout()->createBlock('directory/currency')->setTemplate('directory/currency.phtml')->toHtml(); ?>                                        
+                </div>
+                <div class="item-right">
+                    <div class="top-links hide-below-768">
+                        <?php echo $this->getChildHtml('topLinks'); ?>
+                    </div>
+                    <div class="search-mobile">
+                        <?php echo $this->getChildHtml('topSearch'); ?>
+                    </div>
+                </div>            
+            </div>
+        </div>
+        <div class="top-links links-mobile">
+            <?php echo $this->getChildHtml('topLinks'); ?>
+        </div>        
+    </div>
+    <div class="header-primary-container">
+        <div class="header-primary header container_12">
+            <div class="grid_full">
+                <div class="header-main v-grid-container nav">
+                    <div class="grid_2 v-grid">
+                        <div class="logo">
+                            <a href='<?php echo $this->getUrl(''); ?>' title='<?php echo $this->getLogoAlt(); ?>'>
+                                <strong><?php echo $this->getLogoAlt(); ?></strong>
+                                <img src='<?php echo $this->getLogoSrc(); ?>' alt='<?php echo $this->getLogoAlt(); ?>' />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid_7 v-grid mobile-grid-half no-left-margin">
+                        <?php echo $this->getChildHtml('topContainer'); ?>
+                        <?php echo $this->getChildHtml('topMenu') ?>
+                    </div>                    
+                    <div class="grid_3 v-grid mobile-grid-half no-right-margin">
+                        <?php echo $this->getChildHtml('cart_sidebar') ?>
+                        <div class="quick-search hide-below-768">
+                            <?php echo $this->getChildHtml('topSearch'); ?>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<?php } elseif (Mage::getStoreConfig('frontslash_settings/header/header_style') == '2') {
+    ?>
+    <h2>style 3 </h2>
+    <?php
+} ?>
+
+
