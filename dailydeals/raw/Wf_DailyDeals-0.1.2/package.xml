@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Wf_DailyDeals</name>
+    <version>0.1.2</version>
+    <stability>alpha</stability>
+    <license>OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Simple Dailydeals on Product view and Homepage</summary>
+    <description>This extension will display Dailydeals to product view page as well as on homepage by setting the special price in products. Note special price and special price start and end date are compulsory.</description>
+    <notes>Template Set</notes>
+    <authors><author><name>Ankit Jain</name><user>ankitengr</user><email>ankitengr@gmail.com</email></author></authors>
+    <date>2015-01-12</date>
+    <time>06:00:09</time>
+    <contents><target name="magecommunity"><dir name="Webfrnd"><dir name="Dailydeals"><dir name="Block"><dir name="Product"><file name="List.php" hash="eeb936c8286c56ed2320b02f3742242c"/></dir><file name="dailydeals.php" hash="62a1b8a82d375b8ba8bfa0b91968128c"/></dir><dir name="Helper"><file name="Data.php" hash="5141cc6d9935e4f9ffdd35db33850458"/></dir><dir name="controllers"><file name="IndexController.php" hash="91fa0ab57d7abf0f67e3c84c1312ff14"/></dir><dir name="etc"><file name="config.xml" hash="9c2d1000b191459acd9e2bdeb645dc08"/><file name="system.xml" hash="645c520c11e2c63b719e52c5ff0ace5a"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="webfrnd_dailydeals.xml" hash="381101a1943c64211f90e22f5a525ce9"/></dir><dir name="template"><dir name="webfrnd"><dir name="dailydeals"><file name="product-deallist.phtml" hash="aafd6dec469b08b6f208ec7015565943"/><file name="product-view.phtml" hash="65e60737c64f45d51351a0e17c7a5a23"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Webfrnd_Dailydeals.xml" hash="a8ca21ec39d8a39aadad2ee1848851b7"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>5.6.0</max></php></required></dependencies>
+</package>
