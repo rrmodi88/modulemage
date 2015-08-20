@@ -1,0 +1,373 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<div class="category-products">
+    <?php echo $this->getToolbarHtml() ?>
+    <?php // List mode ?>
+    <?php if($this->getMode()!='grid'): ?>
+    <?php $_iterator = 0; ?>
+    <ol class="products-list" id="products-list">
+    <?php foreach ($_productCollection as $_product): 
+
+    ?>
+        
+        <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+            <?php // Product Image ?>
+            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" width="135" height="135" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+            <?php // Product description ?>
+            <div class="product-shop">
+                <div class="f-fix">
+                    <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                    <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
+                    <?php if($_product->getRatingSummary()): ?>
+                    <?php echo $this->getReviewsSummaryHtml($_product) ?>
+                    <?php endif; ?>
+                     <?php 
+    
+                if(   $configValue = Mage::getStoreConfig('webfrnd_dailydeal_options/general/module_enable', Mage::app()->getStore() )      ) : 
+                    ?>
+            
+                    <?php $currentCurrencySymbol =  Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol()  ?>
+
+                    <?php $groupDealDateEnd = $_product->getSpecialToDate() ?>
+
+                    <?php $mydate = date('M d, Y 23:59:59', strtotime($groupDealDateEnd)) ?> 
+
+                    <?php $groupDealSpecialPrice = $_product->getSpecialPrice() ?>
+                     
+                    <?php $groupPrice = $_product->getPrice() ?>
+                     
+                    <?php $formattedPrice = number_format($groupPrice, 2) ?>
+                     
+                    <?php //Geting Discount Amoutn ?>
+                     
+                    <?php $groupDiscount = ($groupDealSpecialPrice / $groupPrice)?>
+                     
+                    <?php $groupDiscount = $groupDiscount * 100 ?>
+                     
+                    <?php $finalGroupDiscount = number_format($groupDiscount, 0)?>
+
+                    <?php //Getting Savings Amount ?>
+                     
+                    <?php $groupSavings = ($groupPrice - $groupDealSpecialPrice) ?>
+                     
+                    <?php //Number Left to Get Deal ?>
+                     
+                    <?php  $groupInvAmt = (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty();?>
+                     
+                    <?php  $groupDealNumber =$_product->getGroupDealNumberForDeal ?>
+                     
+                    <?php $groupDealLeft = $groupInvAmt - $groupDealNumber ?>
+        
+            
+                <?php if ( $groupDealSpecialPrice && $groupDealDateEnd && ((strtotime($mydate) - strtotime(date("M d, Y h:i:s"))) >0) ) : ?>
+
+                <script>
+                  setInterval(function(){countdown(new Date("<?php echo $mydate; ?>"), '<?php echo $i; ?>')},1000);
+                </script>
+                    <div id="groupbuy">
+
+                        <div id="groupbuy-countdown">Time Left To Get Discount <?php echo 100 - $finalGroupDiscount ?>%
+                            <div class="clear pad5"></div>
+                            <span id="countdown-days-pno<?php echo $i;?>"></span>
+                            <span id="countdown-hours-pno<?php echo $i;?>"></span>
+                            <span id="countdown-minutes-pno<?php echo $i;?>"></span>
+                            <span id="countdown-seconds-pno<?php echo $i;?>"> </span>
+                            <div class="clear"></div>
+                            <span class="spn">Days</span>
+                            <span class="spn">Hours</span>
+                            <span class="spn">Min</span>
+                            <span class="spn">Sec</span>
+                            <div class="clear"></div>
+                         </div>
+                        
+                        <div id="groupbuy-number-sold">Hurry: <span id="DealAmount"><?php echo $groupDealLeft ?> item(s)</span> left</div>
+                        <!--<span id="how-it-wrks"><a href="/group-deal"><?php echo strtotime($groupDealDateEnd) - strtotime(date("Y-m-d h:i:s")) ?></a></span>-->
+                    </div>
+
+                <?php endif; ?>
+                <?php endif; ?>
+                    <?php echo $this->getPriceHtml($_product, true) ?>
+                    <?php if($_product->isSaleable()): ?>
+                        <p><button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>
+                    <div class="desc std">
+                        <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
+                    </div>
+                    <ul class="add-to-links">
+                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                            <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                        <?php endif; ?>
+                        <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                            <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    <?php endforeach; ?>
+    </ol>
+    <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+
+    <?php else: ?>
+
+    <?php // Grid Mode ?>
+
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_columnCount = $this->getColumnCount(); ?>
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+        <?php if ($i++%$_columnCount==0): ?>
+
+        <ul class="products-grid">
+        <?php endif ?>
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" width="135" height="135" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+                <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+                <?php if($_product->getRatingSummary()): ?>
+                <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                <?php endif; ?>
+                <?php echo $this->getPriceHtml($_product, true) ?>
+                <?php 
+    
+                if(   $configValue = Mage::getStoreConfig('webfrnd_dailydeal_options/general/module_enable', Mage::app()->getStore() )      ) : 
+                    ?>
+            
+                    <?php $currentCurrencySymbol =  Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol()  ?>
+
+                    <?php $groupDealDateEnd = $_product->getSpecialToDate() ?>
+
+                    <?php $mydate = date('M d, Y 23:59:59', strtotime($groupDealDateEnd)) ?> 
+
+                    <?php $groupDealSpecialPrice = $_product->getSpecialPrice() ?>
+                     
+                    <?php $groupPrice = $_product->getPrice() ?>
+                     
+                    <?php $formattedPrice = number_format($groupPrice, 2) ?>
+                     
+                    <?php //Geting Discount Amoutn ?>
+                     
+                    <?php $groupDiscount = ($groupDealSpecialPrice / $groupPrice)?>
+                     
+                    <?php $groupDiscount = $groupDiscount * 100 ?>
+                     
+                    <?php $finalGroupDiscount = number_format($groupDiscount, 0)?>
+
+                    <?php //Getting Savings Amount ?>
+                     
+                    <?php $groupSavings = ($groupPrice - $groupDealSpecialPrice) ?>
+                     
+                    <?php //Number Left to Get Deal ?>
+                     
+                    <?php  $groupInvAmt = (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty();?>
+                     
+                    <?php  $groupDealNumber =$_product->getGroupDealNumberForDeal ?>
+                     
+                    <?php $groupDealLeft = $groupInvAmt - $groupDealNumber ?>
+        
+            
+                <?php if ( $groupDealSpecialPrice && $groupDealDateEnd && ((strtotime($mydate) - strtotime(date("M d, Y h:i:s"))) >0) ) : ?>
+
+                <script>
+                  setInterval(function(){countdown(new Date("<?php echo $mydate; ?>"), '<?php echo $i; ?>')},1000);
+                </script>
+                    <div id="groupbuy">
+
+                        <div id="groupbuy-countdown">Time Left To Get Discount <?php echo 100 - $finalGroupDiscount ?>%
+                            <div class="clear pad5"></div>
+                            <span id="countdown-days-pno<?php echo $i;?>"></span>
+                            <span id="countdown-hours-pno<?php echo $i;?>"></span>
+                            <span id="countdown-minutes-pno<?php echo $i;?>"></span>
+                            <span id="countdown-seconds-pno<?php echo $i;?>"> </span>
+                            <div class="clear"></div>
+                            <span class="spn">Days</span>
+                            <span class="spn">Hours</span>
+                            <span class="spn">Min</span>
+                            <span class="spn">Sec</span>
+                            <div class="clear"></div>
+                         </div>
+                        
+                        <div id="groupbuy-number-sold">Hurry: <span id="DealAmount"><?php echo $groupDealLeft ?> item(s)</span> left</div>
+                        <!--<span id="how-it-wrks"><a href="/group-deal"><?php echo strtotime($groupDealDateEnd) - strtotime(date("Y-m-d h:i:s")) ?></a></span>-->
+                    </div>
+
+                <?php endif; ?>
+
+                <?php endif; ?>
+                <div class="actions">
+                    <?php if($_product->isSaleable()): ?>
+                        <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>
+                    <ul class="add-to-links">
+                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                            <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                        <?php endif; ?>
+                        <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                            <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </li>
+        <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+        </ul>
+        <?php endif ?>
+        <?php endforeach ?>
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+    <?php endif; ?>
+
+    <div class="toolbar-bottom">
+        <?php echo $this->getToolbarHtml() ?>
+    </div>
+</div>
+<?php endif; ?>
+
+<style>
+
+/* Daily Deal CSS */
+
+#groupbuy {
+position: relative;
+margin-top: 20px;
+font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+ 
+#groupbuy-hdr {
+
+background: #9b1818; /* Old browsers */
+background: -moz-linear-gradient(top,  #9b1818 0%, #d62a2a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9b1818), color-stop(100%,#d62a2a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #9b1818 0%,#d62a2a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #9b1818 0%,#d62a2a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #9b1818 0%,#d62a2a 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #9b1818 0%,#d62a2a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b1818', endColorstr='#d62a2a',GradientType=0 ); /* IE6-9 */
+border-radius:7px 7px 0 0;
+color: white;
+}
+
+#grp-buy-name {
+font-weight: 700;
+font-size: 20px;
+text-align: center;
+padding:10px;
+}
+
+.groupbuy-retail {
+padding:10px;
+float: left;
+text-align: center;
+font-weight:700;
+font-size:13px;
+width:33%;
+}
+
+#groupbuy-countdown {
+text-align: center;
+font-weight:700;
+font-size:10px;
+margin: 5px;
+color: #c01c1d;
+}
+
+#groupbuy-countdown > span {
+    background:#000;
+    color:#FFF;
+    width:40px;
+    padding:5px 0;
+    display: inline-block;
+}
+
+#groupbuy-countdown .spn {
+    background:#ffffff;
+    color:#444444;
+    font-size:10px; 
+    
+}
+
+#groupbuy-number-sold {
+text-align: center;
+padding:5px;
+/*border:1px solid #ff00ff;*/
+}
+span#DealAmount {
+font-size: 18px;
+font-weight: bold;
+color:#FF0000;
+}
+
+.pad5{ padding:5px;}
+.clear{ clear:both;}
+</style>
+
+<script type="text/javascript">// <![CDATA[
+
+
+    function setElement(id, value) {
+        if (value.toString().length < 2) {
+            value = "0" + value;
+        }
+        window.document.getElementById(id).innerHTML = value;
+    }
+
+    function countdown(then, pno) {
+        console.log(then);
+        now       = new Date();
+        diff      = new Date(then - now);
+        seconds_left  = Math.floor(diff.valueOf() / 1000);
+        
+        seconds  = Math.floor(seconds_left / 1) % 60;
+        minutes  = Math.floor(seconds_left / 60) % 60;
+        hours    = Math.floor(seconds_left / 3600) % 24;
+        days     = Math.floor(seconds_left / 86400) % 86400;
+        
+        setElement('countdown-days-pno' + pno, days);
+        setElement('countdown-hours-pno' + pno, hours);
+        setElement('countdown-minutes-pno' + pno, minutes);
+        setElement('countdown-seconds-pno' + pno, seconds);
+     
+    }
+
+    
+ 
+// ]]></script>

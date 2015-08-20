@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title Page</title>
+
+	<!-- Bootstrap CSS -->
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+			<![endif]-->
+		</head>
+		<body>
+			<h1 class="text-center">Hello World</h1>
+
+			<!-- jQuery -->
+			<div data-id="LimonVideo" style="" class="LimonVideo ">
+				<div style="position: absolute; width: 100%; padding: 25px 15px; min-height: 100px; height: 100%; z-index: 13; background-color: rgba(0, 0, 0, 0.5);" id="LimonVideo_cover">
+					<div style="display: table; width: 100%; height: 100%;" class="display-table">
+						<div style="text-align: center; display: table-cell; vertical-align: middle; width: 100%;">
+							<h3 style="color: #fff; font-size: 60px; line-height: 66px; font-weight: 500; text-align: center;" class="h1">VIDEO BANNER</h3>
+							<h4 style="color: #cccccc;">eiusmod tempor incididunt ut labore et dolore magna<br>aliqua. Ut enim ad minim veniam, quis nostrud<br>exercitation</h4>
+						</div>
+					</div>
+				<em class="fa fa-2x fa-play"></em>
+				</div>
+				<video width="320" height="240" loop="loop"  class="" style="height: auto; min-width: 100%; min-height: 100%; margin-top: -29px;" id="limonVid"><source type="video/mp4" src="http://frontslashthemes.com/limon/media/video_banner.mp4"></source> </video>
+<script src="//code.jquery.com/jquery.js"></script>
+<script type="text/javascript">// &lt;![CDATA[
+	
+	jQuery(document).ready(function() {
+		alert(2)
+		"use strict";
+		var LimonVideo = document.getElementById('limonVid');
+		jQuery('.LimonVideo video').prop("volume", 0);
+		
+		var v_bg = 'rgba(0,0,0, 0.5)';
+		var v_bg_img = '';
+			
+		var video_height = jQuery('.LimonVideo video').height();
+		var v_box_height = jQuery('.LimonVideo').height();
+		var video_margin = v_box_height - video_height;
+		jQuery('.LimonVideo video').css('margin-top', video_margin );
+		
+		jQuery('.fa-play').click(function(){
+			alert(LimonVideo.paused)
+			if(LimonVideo.paused) {
+				jQuery('.LimonVideo').removeClass('video_appear').addClass('video_appear');
+				jQuery('.LimonVideo').removeClass('pause').removeClass('play').addClass('play');
+				//jQuery('#LimonVideo_cover').css({"background-color": v_bg});
+				/*jQuery(this).find('&gt; *').hide();*/
+				jQuery(this).removeClass('fa-play').addClass('fa-pause');
+				document.getElementById('limonVid').play();
+			} else {
+				jQuery('.LimonVideo').removeClass('video_appear');
+				jQuery('.LimonVideo').removeClass('pause').removeClass('play');
+				//jQuery('#LimonVideo_cover').css({"background-color": '#e4e4e4', "background-image": "url(http://demo2.wpdance.com/glory_h1/wp-content/uploads/2015/01/home-video-bg.png)", "background-repeat": "no-repeat"});
+				jQuery(this).removeClass('fa-pause').addClass('fa-play');
+				document.getElementById('limonVid').pause();
+			}
+		});
+		
+	});
+	// ]]&gt;</script>
+</div>
+<!-- Bootstrap JavaScript -->
+</body>
+</html>
